@@ -2,7 +2,7 @@
 title: "Roadmap"
 layout: page.njk
 ---
-# Roadmap
+## Roadmap
 
 _Last updated 25 Aug 2020_
 
@@ -22,13 +22,13 @@ We're taking inspiration from Basecamp's [Shape Up](https://basecamp.com/shapeup
 
 This document is alive. We'll update it as often as we can, and when it's appropriate to do so. And as always, feel free to [open a PR](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md)!
 
-## What goes in 1.0?
+### What goes in 1.0?
 
 Not everything will be in `1.0`. Even things that are core to the Redwood dream, like more sides and targets, won't be there. But that's by design: we need to be very careful about our priorities, both because we want `1.0` to be something special and because if we aren't careful, we'll never get there. The hardest thing in open source is saying no, but as we get closer to `1.0`, it's increasingly what we'll have to do.
 
 With that said, here's a high level overview of the `1.0` roadmap with links to relevant GitHub project boards and forum topics. If you're interested in helping with one of these, just let us know in the [RedwoodJS Forum](https://community.redwoodjs.com/) and we'll be happy to get you set up!
 
-## Accessibility
+### Accessibility
 
 <span id="status-1" class="font-mono">Figuring it out</span>
 
