@@ -189040,3 +189040,7 @@ pre {
 .highlight-line-remove {
   background-color: #902f2f;
 }
+
+summary {
+display: inline-flex 
+}

@@ -25,5 +25,13 @@ module.exports = {
     links.community,
     links.discord,
   ],
-  authorName: "Stephanie Eckles" // optional
+  leftNavLinks: [
+    links.roadmap,
+    links.docs,
+    links.tutorials,
+    links.cookbooks,
+    links.news,
+    links.videos,
+    links.community
+  ]
 };

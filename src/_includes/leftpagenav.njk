@@ -1,0 +1,267 @@
+<aside id="aside" class="hidden absolute inset-0 mt-22 lg:mt-0 lg:mb-8 w-full lg:w-1/5 lg:static lg:block bg-white overflow-y-visible lg:px-0 z-10" data-target="application.nav" data-turbolinks-permanent="">
+    <div class="lg:hidden mt-4 mx-4">
+        <form class="relative" data-controller="search">
+            <input type="text" name="search" autocomplete="off" placeholder="Search the docs (press &quot;/&quot; to focus)" class="transition duration-200 border border-red-200 focus:border-red-400 text-red-800 outline-none rounded w-full px-4 py-2" data-action="keyup->search#search focus->search#search click->search#search" data-target="application.search" />
+            <div class="hidden absolute top-0 left-0 right-0 bg-white z-20 p-4 mt-12 rounded border border-red-200 overflow-x-auto overflow-y-auto" data-target="search.results" style="max-height: 75vh;"></div>
+        </form>
+    </div>
+    <div class="overflow-y-auto lg:sticky top-0 px-8 lg:px-0">
+        <nav class="text-sm font-semibold pt-8 pb-40 lg:py-12 pr-6 overflow-y-auto h-screen" data-action="navigated@document->application#restoreScrollPosition" data-target="application.innerNav">
+            <ul class="-mt-1 ml-2" data-controller="nav" data-nav-active="bg-red-200 text-red-700 hover:text-red-700">
+                {% for pageLink in meta.leftNavLinks %}
+                {% set tag = pageLink.name | lower %}
+                
+                <li class="mb-4">
+                    {% if page.url.split('/')[1] === tag %}
+                        <details open>
+                            <summary>
+                            <a href="{{ pageLink.url }}" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="{{ pageLink.viewbox }}" class="w-6 text-gray-700 fill-current">
+                            {{ pageLink.svg | safe}}
+                            </svg>
+                            <span class="ml-2">{{ pageLink.name }}</span>
+                            </a>
+                            </summary>
+                                <ul>   
+                                {% for thing in collections[pageLink.tag] %}
+                                    <li class="pl-8"><a href="{{thing.url}}">
+                                    {{ thing.data.title }}
+                                    </a></li>
+                                {% endfor %}
+                                </ul>
+                        </details>
+                        {% else %}
+                        <a href="{{ pageLink.url }}" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="{{ pageLink.viewbox }}" class="w-6 text-gray-700 fill-current">
+                            {{ pageLink.svg | safe}}
+                        </svg>
+                        <span class="ml-2">{{ pageLink.name }}</span>
+                        </a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                <li class="mb-4">
+                    <a href="/roadmap" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                            <path d="M5 18.31l3-1.16V5.45L5 6.46zm11 .24l3-1.01V5.69l-3 1.17z" opacity=".3"></path>
+                            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM8 17.15l-3 1.16V6.46l3-1.01v11.7zm6 1.38l-4-1.4V5.47l4 1.4v11.66zm5-.99l-3 1.01V6.86l3-1.16v11.84z"></path>
+                        </svg>
+                        <span class="ml-2">Roadmap</span>
+                    </a>
+                </li>
+
+  <li class="mb-4">
+    <a href="/docs" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-action="click->nav#toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+        <path d="M0 0h24v24H0V0z" fill="none"></path>
+        <path d="M13 13l-3-2.25L7 13V4H6v16h12V4h-5z" opacity=".3"></path>
+        <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"></path>
+      </svg>
+      <span class="ml-2">Docs</span>
+    </a>
+    <ul class="hidden ml-6 mt-2 mb-8">
+<li>
+  <a href="/docs/introduction" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link" data-match="/docs">Introduction</a>
+</li>
+<li>
+  <a href="/docs/quick-start" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Quick Start</a>
+</li>
+<li>
+  <a href="/docs/accessibility" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Accessibility</a>
+</li>
+<li>
+  <a href="/docs/app-configuration-redwood-toml" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">App Configuration: redwood.toml</a>
+</li>
+<li>
+  <a href="/docs/assets-and-files" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Assets and Files</a>
+</li>
+<li>
+  <a href="/docs/authentication" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Authentication</a>
+</li>
+<li>
+  <a href="/docs/builds" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Builds</a>
+</li>
+<li>
+  <a href="/docs/cells" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Cells</a>
+</li>
+<li>
+  <a href="/docs/cli-commands" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">CLI Commands</a>
+</li>
+<li>
+  <a href="/docs/connection-pooling" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Connection Pooling</a>
+</li>
+<li>
+  <a href="/docs/contributing" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Contributing</a>
+</li>
+<li>
+  <a href="/docs/custom-web-index" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Custom Web Index</a>
+</li>
+<li>
+  <a href="/docs/data-migrations" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Data Migrations</a>
+</li>
+<li>
+  <a href="/docs/deploy" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Deploy</a>
+</li>
+<li>
+  <a href="/docs/environment-variables" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Environment Variables</a>
+</li>
+<li>
+  <a href="/docs/form" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Form</a>
+</li>
+<li>
+  <a href="/docs/graphql" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">GraphQL </a>
+</li>
+<li>
+  <a href="/docs/local-postgres-setup" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Local Postgres Setup</a>
+</li>
+<li>
+  <a href="/docs/logger" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Logger</a>
+</li>
+<li>
+  <a href="/docs/mocking-graphql-requests" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Mocking GraphQL requests</a>
+</li>
+<li>
+  <a href="/docs/prerender" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Prerender</a>
+</li>
+<li>
+  <a href="/docs/redwood-router" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Redwood Router</a>
+</li>
+<li>
+  <a href="/docs/schema-relations" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Schema Relations</a>
+</li>
+<li>
+  <a href="/docs/security" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Security</a>
+</li>
+<li>
+  <a href="/docs/seo-head" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">SEO &amp; Head</a>
+</li>
+<li>
+  <a href="/docs/serverless-functions" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Serverless Functions</a>
+</li>
+<li>
+  <a href="/docs/services" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Services</a>
+</li>
+<li>
+  <a href="/docs/storybook" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Storybook</a>
+</li>
+<li>
+  <a href="/docs/testing" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Testing</a>
+</li>
+<li>
+  <a href="/docs/toast-notifications" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Toast Notifications</a>
+</li>
+<li>
+  <a href="/docs/typescript" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">TypeScript</a>
+</li>
+<li>
+  <a href="/docs/webhooks" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Webhooks</a>
+</li>
+<li>
+  <a href="/docs/webpack-configuration" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Webpack Configuration</a>
+</li>
+
+    </ul>
+  </li>
+  <li class="mb-4">
+    <a href="https://learn.redwoodjs.com/docs/tutorial/welcome-to-redwood" target="_blank" rel="noreferrer noopener" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+        <path d="M0 0h24v24H0V0z" fill="none"></path>
+        <path d="M4 5h16v11H4z" opacity=".3"></path>
+        <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path>
+      </svg>
+      <span class="ml-2">Tutorials</span>
+      <svg width="24px" height="24px" viewBox="0 0 24 24" style="cursor:pointer" class="ml-1 w-4"><g stroke-width="2.1" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 13.5 17 19.5 5 19.5 5 7.5 11 7.5"></polyline><path d="M14,4.5 L20,4.5 L20,10.5 M20,4.5 L11,13.5"></path></g></svg>
+    </a>
+  </li>
+  <li class="mb-4">
+    <a href="/cookbook" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-action="click->nav#toggle">
+      
+      <span class="ml-2">Cookbook</span>
+    </a>
+    <ul class="hidden ml-6 mt-2 mb-8">
+<li>
+  <a href="/cookbook/custom-function" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link" data-match="/cookbook">Custom Function</a>
+</li>
+<li>
+  <a href="/cookbook/file-uploads" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">File Uploads</a>
+</li>
+<li>
+  <a href="/cookbook/mocking-graphql-in-storybook" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Mocking GraphQL in Storybook</a>
+</li>
+<li>
+  <a href="/cookbook/disable-api-database" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Disable API/Database</a>
+</li>
+<li>
+  <a href="/cookbook/using-a-third-party-api" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Using a Third Party API</a>
+</li>
+<li>
+  <a href="/cookbook/gotrue-auth" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">GoTrue Auth</a>
+</li>
+<li>
+  <a href="/cookbook/role-based-access-control-rbac" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Role-based Access Control (RBAC)</a>
+</li>
+<li>
+  <a href="/cookbook/pagination" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Pagination</a>
+</li>
+<li>
+  <a href="/cookbook/self-hosting-redwood" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Self-hosting Redwood</a>
+</li>
+
+    </ul>
+  </li>
+  <li class="mb-4">
+    <a href="/news" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+        <g><rect fill="none" height="24" width="24"></rect></g><g><path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M3,18.5V7 c1.1-0.35,2.3-0.5,3.5-0.5c1.34,0,3.13,0.41,4.5,0.99v11.5C9.63,18.41,7.84,18,6.5,18C5.3,18,4.1,18.15,3,18.5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.34,0-3.13,0.41-4.5,0.99V7.49c1.37-0.59,3.16-0.99,4.5-0.99c1.2,0,2.4,0.15,3.5,0.5V18.5z"></path><path d="M11,7.49C9.63,6.91,7.84,6.5,6.5,6.5C5.3,6.5,4.1,6.65,3,7v11.5C4.1,18.15,5.3,18,6.5,18 c1.34,0,3.13,0.41,4.5,0.99V7.49z" opacity=".3"></path></g><g><path d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,10.69,16.18,10.5,17.5,10.5z"></path><path d="M17.5,13.16c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,13.36,16.18,13.16,17.5,13.16z"></path><path d="M17.5,15.83c0.88,0,1.73,0.09,2.5,0.26v-1.52c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,16.02,16.18,15.83,17.5,15.83z"></path></g>
+      </svg>
+      <span class="ml-2">News</span>
+    </a>
+  </li>
+  <li class="mb-4">
+    <a href="/videos" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-action="click->nav#toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+        <path d="M0 0h24v24H0V0z" fill="none"></path>
+        <path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm6 10h-4V5h4v14zm4-2h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"></path>
+        <path d="M10 5h4v14h-4z" opacity=".3"></path>
+      </svg>
+      <span class="ml-2">Videos </span>
+    </a>
+    
+    <ul class="hidden ml-6 mt-2 mb-8">
+<li>
+  <a href="/videos/tutorial" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link" data-match="/videos">Tutorial</a>
+</li>
+<li>
+  <a href="/videos/authentication" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Authentication</a>
+</li>
+<li>
+  <a href="/videos/router" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Router</a>
+</li>
+
+    </ul>
+  </li>
+  <li class="mb-4">
+    <a href="https://community.redwoodjs.com" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-action="click->nav#toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 text-gray-700 fill-current">
+        <path d="M0 0h24v24H0V0z" fill="none"></path>
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 15.17L18.83 16H4V4h16v13.17z"></path>
+        <path d="M4 4v12h14.83L20 17.17V4z" opacity=".3"></path>
+      </svg>
+      <span class="ml-2">Community</span>
+    </a>
+    <ul class="hidden ml-6 mt-2 mb-8">
+<li>
+  <a href="https://community.redwoodjs.com/" target="_blank" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link" data-match="/videos">Discourse Forum</a>
+</li>
+<li>
+  <a href="https://discord.gg/jjSYEQd" target="_blank" class="block my-1 px-2 py-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded" data-target="nav.link">Discord Chat</a>
+</li>
+
+    </ul>
+  </li>
+</ul>
+
+              </nav>
+            </div>
+          </aside>

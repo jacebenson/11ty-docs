@@ -6,7 +6,20 @@ layout: base.njk
   <h1>{{ title }}</h1>
 </header>-->
 <main>
-  <article>
-    {{ content | safe }}
-  </article>
+  <div class="flex">
+    {% include "leftpagenav.njk" %}
+    <div class="flex w-full lg:w-4/5">
+      <article w-full max-w-3xl xl:w-3/4 my-8 lg:px-8 lg:mr-auto>
+        {{ content | safe }}
+      </article>
+      <aside class="hidden xl:block w-1/4 h-auto overflow-y-visible">
+        <div class="overflow-y-auto sticky top-0 pl-6">
+          <div class="text-sm font-semibold text-gray-600 pt-8 pb-40 lg:py-12 overflow-y-auto h-screen">
+            <h4 class="text-xs uppercase text-gray-500">On this page</h4>
+            {{ content | toc | safe }}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
 </main>
