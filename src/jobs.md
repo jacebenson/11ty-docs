@@ -1,5 +1,5 @@
 ---
-title: Page One
+title: News
 ---
 
 This is the first page.
