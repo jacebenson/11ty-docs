@@ -16,7 +16,7 @@
               .split('/')[1] === tag %}
               <details open>
                 <summary>
-                  <a href="{{ pageLink.url }}" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
+                  <a alt="{{ pageLink.alt }}" href="{{ pageLink.url }}" class="flex items-center my-1 transition duration-100 text-gray-600 hover:text-gray-800 rounded">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="{{ pageLink.viewbox }}" class="w-6 text-gray-700 fill-current">
                       {{ pageLink.svg | safe}}
                     </svg>
