@@ -189006,9 +189006,9 @@ pre {
   text-decoration: none;
   color: inherit;
 }
-.token > br, code > br {
+/*.token > br, code > br {
   display: none;
-}
+}*/
 /* allow highlighting empty lines */
 .token:empty:before ,.highlight-line:empty:before {
   content: " ";
