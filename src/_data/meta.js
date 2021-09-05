@@ -33,5 +33,13 @@ module.exports = {
     links.news,
     links.videos,
     links.community
+  ],
+  footerLinks: [
+    links.logos,
+    links.contributing,
+    links.github,
+    links.twitter,
+    links.community,
+    links.discord
   ]
 };
