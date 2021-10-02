@@ -310,7 +310,7 @@ const SidebarLayout = ({ children }) => {
     ...
     {hasRole('admin') && (
       <NavLink
-        to={routes.users()} className="text-gray-600" activeClassName="text-gray-900"
+        to={routes.users()} className="{{styles.text.primary.one}}" activeClassName="{{styles.text.primary.four}}"
       >
       Manage Users
     </NavLink>
@@ -333,7 +333,7 @@ const SidebarLayout = ({ children }) => {
     ...
     {hasRole(['admin', 'author', 'editor', 'publisher']) && (
       <NavLink
-        to={routes.posts()} className="text-gray-600" activeClassName="text-gray-900"
+        to={routes.posts()} className="{{styles.text.primary.one}}" activeClassName="{{styles.text.primary.four}}"
       >
       Manage Posts
     </NavLink>

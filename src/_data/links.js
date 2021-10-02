@@ -21,7 +21,6 @@ module.exports = {
         svg: '<g><rect fill="none" height="24" width="24"></rect></g><g><path d="M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z M3,18.5V7 c1.1-0.35,2.3-0.5,3.5-0.5c1.34,0,3.13,0.41,4.5,0.99v11.5C9.63,18.41,7.84,18,6.5,18C5.3,18,4.1,18.15,3,18.5z M21,18.5 c-1.1-0.35-2.3-0.5-3.5-0.5c-1.34,0-3.13,0.41-4.5,0.99V7.49c1.37-0.59,3.16-0.99,4.5-0.99c1.2,0,2.4,0.15,3.5,0.5V18.5z"></path><path d="M11,7.49C9.63,6.91,7.84,6.5,6.5,6.5C5.3,6.5,4.1,6.65,3,7v11.5C4.1,18.15,5.3,18,6.5,18 c1.34,0,3.13,0.41,4.5,0.99V7.49z" opacity=".3"></path></g><g><path d="M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,10.69,16.18,10.5,17.5,10.5z"></path><path d="M17.5,13.16c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,13.36,16.18,13.16,17.5,13.16z"></path><path d="M17.5,15.83c0.88,0,1.73,0.09,2.5,0.26v-1.52c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,16.02,16.18,15.83,17.5,15.83z"></path></g>',
         alt: "Someone wrote about us!"
     },
-    jobs: { url: "/jobs", name: "Jobs" },
     logos: { 
         url: "/logos", 
         name: "Logos",
@@ -45,8 +44,8 @@ module.exports = {
     },
     contributing: { url: "/contributing", name: "Contributing" },
     tutorials: {
-        url: "https://learn.redwoodjs.com/docs/tutorial/welcome-to-redwood",
-        name: "Tutorials",
+        url: "https://youtube.com",
+        name: "Tutorial",
         viewbox: "0 0 24 24",
         svg: '<path d="M0 0h24v24H0V0z" fill="none"></path><path d="M4 5h16v11H4z" opacity=".3"></path><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"></path>'
     },
@@ -60,16 +59,16 @@ module.exports = {
         svg: '<path d="M16.1357143,0 C7.37857143,0 0,7.03571429 0,15.7214286 C0,16 0.00714285714,32 0.00714285714,32 L16.1357143,31.9857143 C24.9,31.9857143 32,24.6785714 32,15.9928571 C32,7.30714286 24.9,0 16.1357143,0 Z M16,25.1428571 C14.6142857,25.1428571 13.2928571,24.8357143 12.1142857,24.2785714 L6.32142857,25.7142857 L7.95714286,20.3571429 C7.25714286,19.0642857 6.85714286,17.5785714 6.85714286,16 C6.85714286,10.95 10.95,6.85714286 16,6.85714286 C21.05,6.85714286 25.1428571,10.95 25.1428571,16 C25.1428571,21.05 21.05,25.1428571 16,25.1428571 Z"/>'
     },
     github: {
-        url: "https://github.com/redwoodjs/redwood",
+        url: "https://github.com/tskrio/tskrBase",
         name: "GitHub",
-        alt: "Go to Redwood's GitHub repo",
-        tooltip: "<strong>GitHub</strong><br>Go to Redwood's GitHub repo"
+        alt: "Go to TskrBase's GitHub repo",
+        tooltip: "<strong>GitHub</strong><br>Go to TskrBase's GitHub repo"
     },
     twitter: {
-        url: "https://twitter.com/redwoodjs",
+        url: "https://twitter.com/tskrio",
         name: "Twitter",
-        alt: "Follow Redwood on Twitter",
-        tooltip: "<strong>Twitter</strong><br>Follow Redwood on Twitter",
+        alt: "Follow Tskr.io on Twitter",
+        tooltip: "<strong>Twitter</strong><br>Follow Tskr.io on Twitter",
     },
     discord: {
         url: "https://discord.gg/jjSYEQd",

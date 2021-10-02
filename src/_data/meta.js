@@ -3,43 +3,35 @@ module.exports = {
   // NOTE: `process.env.URL` is provided by Netlify, and may need
   // adjusted pending your host
   url: process.env.URL || "http://localhost:8080",
-  siteName: "RedwoodJS",
+  siteName: "TskrBase",
   siteDescription:
     "An opinionated Javascript framework that combines React, GraphQL, Prisma2, SQL, and lots more out of the box.",
   siteImage: "images/opengraph-256.png",
-  siteURL: "https://redwoodjs.com",
+  siteURL: "https://tskr.io/",
   twitterHandle: "@redwoodjs",
   siteTwitterTitle: "Bringing full-stack to the Jamstack",
   navLinks: [
     links.docs,
-    links.community,
-    links.shop,
-    links.news,
-    links.jobs,
+    links.tutorials,
     links.roadmap,
   ],
   iconLinks: [
     links.github,
     links.twitter,
     links.youtube,
-    links.community,
     links.discord,
   ],
   leftNavLinks: [
-    links.roadmap,
     links.docs,
     links.tutorials,
     links.cookbooks,
-    links.news,
     links.videos,
-    links.community
   ],
   footerLinks: [
     links.logos,
     links.contributing,
     links.github,
     links.twitter,
-    links.community,
     links.discord
   ]
 };

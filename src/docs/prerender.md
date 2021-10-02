@@ -102,7 +102,7 @@ const MySpecialComponent = () => {
     <div className="my-4 p-5 rounded-lg border-gray-200 border">
       <h1 className="text-xl font-bold">Render info:</h1>
 
-      {browser ? <h2 className="text-green-500">Browser</h2> : <h2 className="text-red-500">Prerendered</h2>}
+      {browser ? <h2 className="text-green-500">Browser</h2> : <h2 className="{{styles.text.alt.two}}">Prerendered</h2>}
     </div>
   )
 }

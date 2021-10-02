@@ -12,18 +12,45 @@
   <meta name="twitter:title"         content="{{ meta.siteTwitterTitle }}">
   <meta name="twitter:description"   content="{{ meta.siteDescription }}">
   <meta name="twitter:image"         content="{{ meta.url }}/{{meta.siteImage}}">
-  <title>RedwoodJS - Bringing Full-stack to the Jamstack</title>
+  <title>{{meta.siteName}} - {{meta.siteTwitterTitle}}</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/images/opengraph-256.png">
   <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atelier-forest-light.min.css">
-  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css" rel="stylesheet">
+<style>
+:root {
+  --color-background-one: {{styles.colors.primary.two}};
+  --color-background-two: {{styles.colors.primary.five}};
+}
+ p a,  li a,  blockquote a {
+    --tw-text-opacity: 1;
+    color: {{styles.primaryColor}}
+  }
+.hero {
+  position: relative
+}
 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-background-one);
+  background-image: url('/images/logo-outline.svg'), linear-gradient(var(--color-background-two), var(--color-background-two));
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+</style>
+
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css" rel="stylesheet">
   <title>{{ title }}{% if page.url != '/' %} | {{ meta.siteName }}{% endif %}</title>
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
-<body class="relative bg-white text-gray-900 font-sans antialiased h-full flex flex-col">
+<body class="relative bg-white {{styles.text.primary.four}} font-sans antialiased h-full flex flex-col">
   <div class="flex-grow flex-shrink-0 flex-auto">
   {% include "nav.njk" %}
 

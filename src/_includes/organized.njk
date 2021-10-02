@@ -1,15 +1,15 @@
 <section class="md:flex mt-12 pt-12 max-w-screen-lg mx-auto">
   <div class="md:w-2/5 pr-4">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">How it's Organized</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">How it's Organized</h3>
     <p class="my-3">
       Redwood places both the frontend and backend code in a <span class="whitespace-nowrap">single monorepo.</span>
     </p>
     <p class="my-3">
-      <code class="text-red-700 bg-red-200 py-half px-1 rounded text-xs">/web</code>
+      <code class="{{styles.text.alt.four}} {{styles.background.primary.two}} py-half px-1 rounded text-xs">/web</code>
       contains the frontend and is served as static files through a CDN (and automatically code-split <span class="whitespace-nowrap">for you).</span>
     </p>
     <p class="my-3">
-      <code class="text-red-700 bg-red-200 py-half px-1 rounded text-xs">/api</code>
+      <code class="{{styles.text.alt.four}} {{styles.background.primary.two}} py-half px-1 rounded text-xs">/api</code>
       contains the backend serverless functions (a GraphQL API by default) that your frontend will call when it needs
       some <span class="whitespace-nowrap">dynamic data.</span>
     </p>
@@ -25,7 +25,7 @@
   <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
 </div>
 <section class="md:flex mt-24 max-w-screen-lg mx-auto">
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 border-red-200 rounded-lg">
+  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
 {% highlight "jsx" %}
 // web/src/components/Admin/Admin.js
 import { Link, routes } from '@redwoodjs/router'
@@ -41,7 +41,7 @@ const Admin = () => {
   </div>
 
   <div class="md:w-2/5 pl-4">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">Routing</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Routing</h3>
     <p class="my-3">
       Redwood features its own router that brings some awesome innovation to this often overlooked (but important)
       part of <span class="whitespace-nowrap">your app.</span>
@@ -59,7 +59,7 @@ const Admin = () => {
 
 <section class="md:flex mt-24 max-w-screen-lg mx-auto">
   <div class="md:w-2/5 pr-4 text-right">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">Cells</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Cells</h3>
     <p class="my-3">
       The sequence of retrieving data from an API, showing a loading placeholder, and then displaying the result is so
       common that Redwood codifies it into a declarative code pattern, resulting in simple and <span class="whitespace-nowrap">readable code!</span>
@@ -69,7 +69,7 @@ const Admin = () => {
       states, each one rendering itself automatically depending on what state your cell <span class="whitespace-nowrap">is in.</span>
     </p>
   </div>
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 border-red-200 rounded-lg">
+  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
 {% highlight "jsx" %}
 // web/src/components/UsersCell/UsersCell.js
 export const QUERY = gql`
@@ -143,7 +143,7 @@ export const Success = ({ users }) => {
 {% endhighlight %}
   </div>
   <div class="md:w-2/5 pl-4">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">Services</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Services</h3>
     <p class="my-3">
       Redwood puts all your business logic in one place—<strong>Services</strong>. These can be used by your GraphQL
       API or any other place in your backend code. Redwood does all of the annoying stuff <span class="whitespace-nowrap">for you.</span>
@@ -151,7 +151,7 @@ export const Success = ({ users }) => {
     <p></p>
     <p class="my-3">
       Check out how easy it is to create and consume a GraphQL endpoint (we didn't even omit any other
-      <code class="bg-red-200 text-red-600 font-mono text-sm px-1 py-half rounded">import</code>
+      <code class="{{styles.background.primary.two}} {{styles.text.alt.three}} font-mono text-sm px-1 py-half rounded">import</code>
       statements or cheat to get the code smaller, <span class="whitespace-nowrap">honest!).</span>
     </p>
   </div>
@@ -165,7 +165,7 @@ export const Success = ({ users }) => {
 
 <section class="md:flex mt-24 max-w-screen-lg mx-auto">
   <div class="md:w-2/5 pr-4 text-right">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">CLI Tools</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">CLI Tools</h3>
     <p class="my-3">
       Even with a relentless elimination of boilerplate, Redwood files still need a bit of code to get you started,
       and need to be created in the right directories. No problem, let a computer do that <span class="whitespace-nowrap">for you!</span>
@@ -175,7 +175,7 @@ export const Success = ({ users }) => {
       as well as <strong>installers</strong> for TailwindCSS, authentication libraries and even <span class="whitespace-nowrap">deploy targets.</span>
     </p>
   </div>
-  <div class="md:w-3/5 md:pl-4 mt-4 md:mt-0 border-red-200 rounded-lg">
+  <div class="md:w-3/5 md:pl-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
   test
 {% highlight "shell" %}
 # Create a cell for Users
@@ -235,7 +235,7 @@ export const Comment = () => {
 {% endhighlight %}
   </div>
   <div class="md:w-2/5 pl-4 text">
-    <h3 class="text-2xl text-red-700 font-bold tracking-tight">Forms</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Forms</h3>
     <p class="my-2">
       Working with forms is notoriously annoying in React apps. Redwood removes the complexity and gives you the
       freedom to work with regular HTML inputs, but sprinkled with a bit of validation and error handling. Show client

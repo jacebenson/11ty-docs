@@ -32010,7 +32010,7 @@ code.javascript, code.bash {
 
   See https://tailwindcss.com/docs/adding-new-utilities for creating new Tailwind utilities
 */
-
+/*
 .hero {
   position: relative
 }
@@ -32028,7 +32028,7 @@ code.javascript, code.bash {
   background-position: 50% 50%;
   z-index: -1
 }
-
+*/
 .hljs {
   background-color: #FDF8F6 !important;
 }
@@ -32057,57 +32057,62 @@ code.javascript, code.bash {
   color: rgba(191, 71, 34, var(--tw-text-opacity))
 }
 
-.markdown h1, .markdown h2 {
+ h1,  h2 {
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-.markdown h3 {
+ h3 {
     font-weight: 600;
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-.markdown h2, .markdown h3, .markdown h4 {
+ h2,  h3,  h4 {
     margin-bottom: 1rem;
     margin-top: 2rem;
   }
 
-.markdown h4 {
+ h4 {
     font-weight: 600;
   }
 
 /* Move headings over because the anchor link will be hidden */
 
 @media (min-width: 1024px) {
-    .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    /* h1,  h2,  h3,  h4,  h5,  h6 {
       margin-left: -1.1rem;
     }
 
-    .markdown h4 {
+     h4 {
       margin-left: -0.9rem;
-    }
+    }*/
   }
 
-.markdown p {
+ p {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
-.markdown ul, .markdown ol {
+  .hidden> li {
+    list-style: none;
+  }
+  .toc>ol>li, .toc>ol>li>ol>li , .toc>ol>li>ol>li>ol>li {
+    list-style: none;
+  }
+ul,  ol {
     margin-left: 2rem;
   }
 
-.markdown ul {
+ ul {
     list-style-type: disc;
   }
 
-.markdown ol {
+ ol {
     list-style-type: decimal;
   }
 
-.markdown pre {
+ pre {
     --tw-bg-opacity: 1;
     background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
     border-radius: 0.5rem;
@@ -32121,7 +32126,7 @@ code.javascript, code.bash {
     color: rgba(255, 255, 255, var(--tw-text-opacity));
   }
 
-.markdown .highlighted-line {
+ .highlighted-line {
     --tw-bg-opacity: 1;
     background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
     display: block;
@@ -32133,12 +32138,12 @@ code.javascript, code.bash {
   }
 
 @media (min-width: 1024px) {
-    .markdown pre {
+     pre {
       padding-bottom: 1rem;
     }
   }
 
-.markdown p code, .markdown li code, .markdown dl code {
+ p code,  li code,  dl code {
     --tw-bg-opacity: 1;
     background-color: rgba(250, 234, 229, var(--tw-bg-opacity));
     border-radius: 0.25rem;
@@ -32152,7 +32157,7 @@ code.javascript, code.bash {
     color: rgba(17, 24, 39, var(--tw-text-opacity));
   }
 
-.markdown li pre code {
+ li pre code {
     background-color: transparent;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -32162,7 +32167,7 @@ code.javascript, code.bash {
     color: rgba(255, 255, 255, var(--tw-text-opacity));
   }
 
-.markdown blockquote {
+ blockquote {
     --tw-bg-opacity: 1;
     background-color: rgba(253, 248, 246, var(--tw-bg-opacity));
     --tw-border-opacity: 1;
@@ -32179,46 +32184,43 @@ code.javascript, code.bash {
     padding-right: 1.5rem;
   }
 
-.markdown blockquote ul:last-child {
+ blockquote ul:last-child {
     margin-bottom: 1.5rem;
   }
 
-.markdown img {
+ img {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-.markdown p a, .markdown li a, .markdown blockquote a {
-    --tw-text-opacity: 1;
-    color: rgba(191, 71, 34, var(--tw-text-opacity));
-  }
 
-.markdown p a:hover, .markdown li a:hover, .markdown blockquote a:hover {
+
+ p a:hover,  li a:hover,  blockquote a:hover {
     text-decoration: underline;
   }
 
-.markdown .markdownIt-Anchor {
+ It-Anchor {
     visibility: visible;
   }
 
-.markdown h1:hover .markdownIt-Anchor,
-  .markdown h2:hover .markdownIt-Anchor,
-  .markdown h3:hover .markdownIt-Anchor,
-  .markdown h4:hover .markdownIt-Anchor,
-  .markdown h5:hover .markdownIt-Anchor,
-  .markdown h6:hover .markdownIt-Anchor {
+ h1:hover It-Anchor,
+   h2:hover It-Anchor,
+   h3:hover It-Anchor,
+   h4:hover It-Anchor,
+   h5:hover It-Anchor,
+   h6:hover It-Anchor {
     visibility: visible;
   }
 
 /* Hide anchor links when the screen is big enough (and probably not a touch-only device) */
 
 @media (min-width: 1024px) {
-    .markdown .markdownIt-Anchor {
+     It-Anchor {
       visibility: hidden;
     }
   }
 
-.markdown table {
+ table {
     --tw-bg-opacity: 1;
     background-color: rgba(253, 248, 246, var(--tw-bg-opacity));
     border-top-left-radius: 0.5rem;
@@ -32227,26 +32229,26 @@ code.javascript, code.bash {
     width: 100%;
   }
 
-.markdown th {
+ th {
     --tw-bg-opacity: 1;
     background-color: rgba(250, 234, 229, var(--tw-bg-opacity));
     padding: 0.5rem;
   }
 
-.markdown th:first-child {
+ th:first-child {
     border-top-left-radius: 0.5rem;
     white-space: nowrap;
   }
 
-.markdown th:last-child {
+ th:last-child {
     border-top-right-radius: 0.5rem;
   }
 
-.markdown td {
+ td {
     padding: 0.5rem;
   }
 
-.markdown td code {
+ td code {
     --tw-bg-opacity: 1;
     background-color: rgba(250, 234, 229, var(--tw-bg-opacity));
     border-radius: 0.25rem;
@@ -32261,35 +32263,35 @@ code.javascript, code.bash {
     white-space: nowrap;
   }
 
-.markdown td a {
+ td a {
     --tw-text-opacity: 1;
     color: rgba(191, 71, 34, var(--tw-text-opacity));
   }
 
-.markdown td a:hover {
+ td a:hover {
     text-decoration: underline;
   }
 
-.markdown details {
+ details {
     margin-bottom: 0.5rem;
   }
 
-.markdown summary {
+ summary {
     cursor: pointer;
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
 
-.markdown dl {
+ dl {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-.markdown dt {
+ dt {
     margin-top: 1rem;
   }
 
-.markdown dd {
+ dd {
     font-size: 0.875rem;
     line-height: 1.25rem;
     margin-top: 0.25rem;
@@ -32298,16 +32300,16 @@ code.javascript, code.bash {
     color: rgba(31, 41, 55, var(--tw-text-opacity));
   }
 
-.markdown dd code {
+ dd code {
       font-size: 0.75rem;
       line-height: 1rem;
     }
 
-.markdown .code-dl {
+ .code-dl {
     margin-top: 2rem;
   }
 
-.markdown .code-dl p {
+ .code-dl p {
       margin-top: 0.25rem;
       margin-bottom: 2rem;
     }

@@ -100,13 +100,13 @@ import {
 import ReactFilestack from 'filestack-react'
 
 const CSS = {
-  label: 'block mt-6 text-gray-700 font-semibold',
-  labelError: 'block mt-6 font-semibold text-red-700',
+  label: 'block mt-6 {{styles.text.primary.two}} font-semibold',
+  labelError: 'block mt-6 font-semibold {{styles.text.alt.four}}',
   input:
-    'block mt-2 w-full p-2 border border-gray-300 text-gray-700 rounded focus:outline-none focus:border-gray-500',
+    'block mt-2 w-full p-2 border border-gray-300 {{styles.text.primary.two}} rounded focus:outline-none focus:border-gray-500',
   inputError:
-    'block mt-2 w-full p-2 border border-red-700 text-red-900 rounded focus:outline-none',
-  errorMessage: 'block mt-1 font-semibold uppercase text-xs text-red-700',
+    'block mt-2 w-full p-2 border {{styles.border.primary.three}} {{styles.text.alt.six}} rounded focus:outline-none',
+  errorMessage: 'block mt-1 font-semibold uppercase text-xs {{styles.text.alt.four}}',
 }
 
 const ImageForm = (props) => {
@@ -119,7 +119,7 @@ const ImageForm = (props) => {
       <Form onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}
-          wrapperClassName="p-4 bg-red-100 text-red-700 border border-red-300 rounded mt-4 mb-4"
+          wrapperClassName="p-4 {{styles.background.primary.one}} {{styles.text.alt.four}} border {{styles.border.primary.two}} rounded mt-4 mb-4"
           titleClassName="mt-0 font-semibold"
           listClassName="mt-2 list-disc list-inside"
         />
@@ -240,13 +240,13 @@ import ReactFilestack from 'filestack-react'
 import { useState } from 'react'
 
 const CSS = {
-  label: 'block mt-6 text-gray-700 font-semibold',
-  labelError: 'block mt-6 font-semibold text-red-700',
+  label: 'block mt-6 {{styles.text.primary.two}} font-semibold',
+  labelError: 'block mt-6 font-semibold {{styles.text.alt.four}}',
   input:
-    'block mt-2 w-full p-2 border border-gray-300 text-gray-700 rounded focus:outline-none focus:border-gray-500',
+    'block mt-2 w-full p-2 border border-gray-300 {{styles.text.primary.two}} rounded focus:outline-none focus:border-gray-500',
   inputError:
-    'block mt-2 w-full p-2 border border-red-700 text-red-900 rounded focus:outline-none',
-  errorMessage: 'block mt-1 font-semibold uppercase text-xs text-red-700',
+    'block mt-2 w-full p-2 border {{styles.border.primary.three}} {{styles.text.alt.six}} rounded focus:outline-none',
+  errorMessage: 'block mt-1 font-semibold uppercase text-xs {{styles.text.alt.four}}',
 }
 
 const ImageForm = (props) => {
@@ -326,10 +326,10 @@ const ImagesList = ({ images }) => {
   }
 
   return (
-    <div className="bg-white text-gray-900 border rounded-lg overflow-x-scroll">
+    <div className="bg-white {{styles.text.primary.four}} border rounded-lg overflow-x-scroll">
       <table className="table-auto w-full min-w-3xl text-sm">
         <thead>
-          <tr className="bg-gray-300 text-gray-700">
+          <tr className="bg-gray-300 {{styles.text.primary.two}}">
             <th className="font-semibold text-left p-3">id</th>
             <th className="font-semibold text-left p-3">title</th>
             <th className="font-semibold text-left p-3">file</th>
@@ -356,7 +356,7 @@ const ImagesList = ({ images }) => {
                       <Link
                         to={routes.image({ id: image.id })}
                         title={'Show image ' + image.id + ' detail'}
-                        className="text-xs bg-gray-100 text-gray-600 hover:bg-gray-600 hover:text-white rounded-sm px-2 py-1 uppercase font-semibold tracking-wide"
+                        className="text-xs bg-gray-100 {{styles.text.primary.one}} hover:bg-gray-600 hover:text-white rounded-sm px-2 py-1 uppercase font-semibold tracking-wide"
                       >
                         Show
                       </Link>
@@ -374,7 +374,7 @@ const ImagesList = ({ images }) => {
                       <a
                         href="#"
                         title={'Delete image ' + image.id}
-                        className="text-xs bg-gray-100 text-red-600 hover:bg-red-600 hover:text-white rounded-sm px-2 py-1 uppercase font-semibold tracking-wide"
+                        className="text-xs bg-gray-100 {{styles.text.alt.three}} hover:{{styles.background.primary.four}} hover:text-white rounded-sm px-2 py-1 uppercase font-semibold tracking-wide"
                         onClick={() => onDeleteClick(image.id)}
                       >
                         Delete

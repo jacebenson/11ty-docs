@@ -20,7 +20,7 @@ We're taking inspiration from Basecamp's [Shape Up](https://basecamp.com/shapeup
 
 > If you know Shape Up, then you'll know that our scopes are probably too big. They are. But we want to orient people who aren't knee-deep in this, and questions like "how's TypeScript going?" are usually the kinds they have. This means that even if we say TypeScript is <span id="status-3" class="font-mono">Making it happen</span>, there are some parts of it that might be <span id="status-0" class="font-mono">Didn't start</span>.
 
-This document is alive. We'll update it as often as we can, and when it's appropriate to do so. And as always, feel free to [open a PR](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md)!
+This document is alive. We'll update it as often as we can, and when it's appropriate to do so. And as always, feel free to open a pull request.
 
 ### What goes in 1.0?
 
@@ -36,13 +36,13 @@ Accessibility isn't something we're going to compromise on. It has to be first c
 
 [Accessibility • GitHub Project Board](https://github.com/redwoodjs/redwood/projects/5)
 
-## Auth
+## User Scheme
 
 <span id="status-3" class="font-mono">Making it happen</span>
 
-Authentication and authorization are baked into Redwood. We plan to have easy-to-install, sophisticated authentication methods for a variety of popular auth providers. On top of that, we'll also provide RBAC (role-based access control) capabilities if you want them.
+User Scheme and Models are important for knowing your users.  Users have the minimal amount of information they need to know about themselves, and they can be easily identified by their email address.  Default this uses Redwood's dbAuth.  However any auth system should be usable.
 
-[Auth • GitHub Project Board](https://github.com/redwoodjs/redwood/projects/6)
+[User Scheme • GitHub Project Board](https://github.com/tskrio/tskrBase/projects/2)
 
 ## Core
 
