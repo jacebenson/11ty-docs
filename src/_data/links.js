@@ -1,3 +1,4 @@
+let thisGitHubRepo = "jacebenson/11ty-docs";
 module.exports = {
     docs: {
         tag: "docs",
@@ -59,12 +60,14 @@ module.exports = {
         svg: '<path d="M16.1357143,0 C7.37857143,0 0,7.03571429 0,15.7214286 C0,16 0.00714285714,32 0.00714285714,32 L16.1357143,31.9857143 C24.9,31.9857143 32,24.6785714 32,15.9928571 C32,7.30714286 24.9,0 16.1357143,0 Z M16,25.1428571 C14.6142857,25.1428571 13.2928571,24.8357143 12.1142857,24.2785714 L6.32142857,25.7142857 L7.95714286,20.3571429 C7.25714286,19.0642857 6.85714286,17.5785714 6.85714286,16 C6.85714286,10.95 10.95,6.85714286 16,6.85714286 C21.05,6.85714286 25.1428571,10.95 25.1428571,16 C25.1428571,21.05 21.05,25.1428571 16,25.1428571 Z"/>'
     },
     github: {
-        url: "https://github.com/jacebenson/11ty-docs",
+        url: `https://github.com/${thisGitHubRepo}`,
         name: "GitHub",
         alt: "Go to 11ty-docs's GitHub repo",
         tooltip: "<strong>GitHub</strong><br>Go to 11ty-docs's GitHub repo",
-        contributorsApi: "https://api.github.com/repos/jacebenson/11ty-docs/contributors",
-        docsContributorsApi: "https://api.github.com/repos/jacebenson/secondaryRepo/contributors"
+        stargazersApi:       `https://api.github.com/repos/${thisGitHubRepo}/`,
+        releasesApi:         `https://api.github.com/repos/${thisGitHubRepo}/releases?per_page=1`,
+        contributorsApi:     `https://api.github.com/repos/${thisGitHubRepo}/contributors`,
+        docsContributorsApi: `https://api.github.com/repos/jacebenson/secondaryRepo/contributors`
     },
     twitter: {
         url: "https://twitter.com/jacebenson",
@@ -88,12 +91,12 @@ module.exports = {
         svg: '<path d="M297.917, 64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359, 0-61.369, 5.776-72.517, 19.938 C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527 C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991 c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764 c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861	C204.394,157.263,202.325,160.684,199.021,162.41z"/>'
     },
     license: {
-        url: "https://github.com/jacebenson/11ty-docs/blob/main/LICENSE",
+        url: `https://github.com/${thisGitHubRepo}/blob/main/LICENSE`,
         name: "MIT License",
         alt: "MIT License",
     },
     netlify: {
-        url: "https://app.netlify.com/start/deploy?repository=https://github.com/jacebenson/11ty-docs",
+        url: `https://app.netlify.com/start/deploy?repository=https://github.com/${thisGitHubRepo}`,
         name: "Deploy to Netlify",
         alt: "Deploy to Netlify",
     }

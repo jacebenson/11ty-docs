@@ -15,18 +15,42 @@
   <title>{{meta.siteName}} - {{meta.siteTwitterTitle}}</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/images/opengraph-256.png">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/application.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atelier-forest-light.min.css">
 <style>
 :root {
   --color-background-one: {{styles.colors.primary.two}};
   --color-background-two: {{styles.colors.primary.five}};
+  --color-highlight-add: {{styles.colors.primary.five}};
+  --color-highlight-remove: {{styles.colors.primary.two}};
 }
  p a,  li a,  blockquote a {
     --tw-text-opacity: 1;
     color: {{styles.primaryColor}}
   }
+
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, .8);
+}
+.highlight-line-add {
+  background-color: hsla(147, 100%, 50%, .2);
+}
+.highlight-line-add::before {
+  content: "+"
+}
+
+.highlight-line-remove::before {
+  content: "-"
+}
+.highlight-line-remove {
+  background-color: hsla(0, 100%, 50%, .2);
+}
+
 .hero {
   position: relative
 }
