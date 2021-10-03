@@ -1,15 +1,15 @@
 module.exports = [    
     {
-        title: "Edge-ready",
-        description: "Redwood is designed to be deployable completely to the Edge—CDNs and serverless functions distributed everywhere. Containers and traditional server deploys are also supported!",
+        title: "Light Speed Builds!",
+        description: "Because this is just an 11ty site, it's builds are fast.  Like Jimmy John's fast.  Don't believe me?  Pull this down and give it a go.",
         icon: "/images/icon-edge.svg",
     },{
-        title: "Code Organization",
-        description: "Redwood has a pre-defined place for all your code, front-end and back-end. Components, layouts, pages, GraphQL, and services: they all have a home. Don't worry, you can reorganize if you want.",
+        title: "Opinionated",
+        description: "You have to make decisions, but you don't have to make them all.  Let this repo decide where you put some of your docs.",
         icon: "/images/icon-organization.svg",
     },{
         title: "Developer Experience",
-        description: "Redwood apps are as declarative as possible; we eliminate most boilerplate; zero-config code splitting...everything just works. Let us worry about Webpack and Babel config, you focus on the fun stuff.",
+        description: "This is the experience we're all waiting for!",
         icon: "/images/icon-code.svg",
     },
 ]

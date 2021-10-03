@@ -1,245 +1,26 @@
-<section class="md:flex mt-12 pt-12 max-w-screen-lg mx-auto">
-  <div class="md:w-2/5 pr-4">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">How it's Organized</h3>
-    <p class="my-3">
-      Redwood places both the frontend and backend code in a <span class="whitespace-nowrap">single monorepo.</span>
-    </p>
-    <p class="my-3">
-      <code class="{{styles.text.alt.four}} {{styles.background.primary.two}} py-half px-1 rounded text-xs">/web</code>
-      contains the frontend and is served as static files through a CDN (and automatically code-split <span class="whitespace-nowrap">for you).</span>
-    </p>
-    <p class="my-3">
-      <code class="{{styles.text.alt.four}} {{styles.background.primary.two}} py-half px-1 rounded text-xs">/api</code>
-      contains the backend serverless functions (a GraphQL API by default) that your frontend will call when it needs
-      some <span class="whitespace-nowrap">dynamic data.</span>
-    </p>
-  </div>
-  <div class="md:w-3/5 md:pl-4 mt-4 md:mt-0">
-    <a href="/images/structure.png"><img src="/images/structure.png" alt="Structure of a Redwood app" /></a>
-  </div>
-</section>
-
-<div class="flex w-36 mx-auto">
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-</div>
-<section class="md:flex mt-24 max-w-screen-lg mx-auto">
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
-{% highlight "jsx" %}
-// web/src/components/Admin/Admin.js
-import { Link, routes } from '@redwoodjs/router'
-const Admin = () => {
-  return (
-    <h1><Link to={routes.home()}>My CRM</Link></h1>
-    <Link to={routes.users({type: "admin"})}>
-        View Admins
-    </Link>
-  )
-}
-{% endhighlight %}
-  </div>
-
-  <div class="md:w-2/5 pl-4">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Routing</h3>
-    <p class="my-3">
-      Redwood features its own router that brings some awesome innovation to this often overlooked (but important)
-      part of <span class="whitespace-nowrap">your app.</span>
-      <strong>Named routes</strong> let you reference a route by a name you define,
-      <strong>route param types</strong> take care of coercing values based on data type or custom functions, <span class="whitespace-nowrap">and more.</span>
-    </p>
-  </div>
-</section>
-
-<div class="flex w-36 mx-auto">
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-</div>
-
 <section class="md:flex mt-24 max-w-screen-lg mx-auto">
   <div class="md:w-2/5 pr-4 text-right">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Cells</h3>
+    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Quick Start</h3>
     <p class="my-3">
-      The sequence of retrieving data from an API, showing a loading placeholder, and then displaying the result is so
-      common that Redwood codifies it into a declarative code pattern, resulting in simple and <span class="whitespace-nowrap">readable code!</span>
-    </p>
+      You might have some amazing script to share.  Or a shell script to share.  This is <span class="whitespace-nowrap">the place</span> to do it!
+    </p> 
     <p class="my-3">
-      We call them <strong>cells</strong> and they contain the GraphQL query, loading, empty, error, and success
-      states, each one rendering itself automatically depending on what state your cell <span class="whitespace-nowrap">is in.</span>
-    </p>
-  </div>
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
-{% highlight "jsx" %}
-// web/src/components/UsersCell/UsersCell.js
-export const QUERY = gql`
-query USERS {
-  users {
-    id
-    name
-  }
-}
-`
-export const Loading = () => <div>Loading users...</div>
-export const Empty = () => <div>No users yet!</div>
-export const Failure = ({ message }) => <div>Error: {message}</div>
-export const Success = ({ users }) => {
-  return (
-    <ul>
-      { users.map(user => (
-        <li>{user.id} | {user.name}</li>
-      ))}
-    </ul>
-  )
-}
-{% endhighlight %}
-  </div>
-</section>
-
-<div class="flex w-36 mx-auto">
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-</div>
-
-<section class="md:flex mt-24 max-w-screen-lg mx-auto">
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0">    
-{% highlight "jsx" %}
-// api/src/graphql/users.sdl.js
-
-export const schema = gql`
-  type User {
-    id: Int!
-    name: String!
-  }
-  type Query {
-    users: [User]
-  }
-`
-{% endhighlight %}
-
-{% highlight "jsx" %}
-// api/src/services/users/users.js
-
-import { db } from 'src/lib/db'
-
-export const users = () => db.user.findMany()"
-{% endhighlight %}
-
-{% highlight "jsx" %}
-// web/src/components/UsersCell/UsersCell.js
-
-export const QUERY = gql`
-  query USERS {
-    users {
-      id
-      name
-    }
-  }
-`
-export const Success = ({ users }) => {
-  return JSON.stringify(users)
-}
-{% endhighlight %}
-  </div>
-  <div class="md:w-2/5 pl-4">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Services</h3>
-    <p class="my-3">
-      Redwood puts all your business logic in one place—<strong>Services</strong>. These can be used by your GraphQL
-      API or any other place in your backend code. Redwood does all of the annoying stuff <span class="whitespace-nowrap">for you.</span>
-    </p>
-    <p></p>
-    <p class="my-3">
-      Check out how easy it is to create and consume a GraphQL endpoint (we didn't even omit any other
-      <code class="{{styles.background.primary.two}} {{styles.text.alt.three}} font-mono text-sm px-1 py-half rounded">import</code>
-      statements or cheat to get the code smaller, <span class="whitespace-nowrap">honest!).</span>
-    </p>
-  </div>
-</section>
-
-<div class="flex w-36 mx-auto">
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-</div>
-
-<section class="md:flex mt-24 max-w-screen-lg mx-auto">
-  <div class="md:w-2/5 pr-4 text-right">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">CLI Tools</h3>
-    <p class="my-3">
-      Even with a relentless elimination of boilerplate, Redwood files still need a bit of code to get you started,
-      and need to be created in the right directories. No problem, let a computer do that <span class="whitespace-nowrap">for you!</span>
-    </p>
-    <p class="my-3">
-      Redwood contains several <strong>generators</strong> which create the shell of cells, pages, layouts, services,
-      as well as <strong>installers</strong> for TailwindCSS, authentication libraries and even <span class="whitespace-nowrap">deploy targets.</span>
+      Just type out your code here and <strong>bam</strong> it will look <strong>amazing</strong> over there 👉.
     </p>
   </div>
   <div class="md:w-3/5 md:pl-4 mt-4 md:mt-0 {{styles.border.primary.one}} rounded-lg">
-  test
 {% highlight "shell" %}
-# Create a cell for Users
-$ yarn rw generate cell User
+# Clone the repo
+$ git clone {{links.github.url + ".git"}}
 
-# Create a homepage and set the URL to /
-$ yarn rw generate page Home /
+# Change directory to the repo
+$ cd 11ty-docs
 
-# Read the DB schema and create the SDL file for the User table
-$ yarn rw generate sdl User
+# install the dependencies
+$ yarn install
 
-# Create the SDL, service, cells, pages and components to CRUD a User
-$ yarn rw generate scaffold User
-
-# Install and configure TailwindCSS
-$ yarn rw setup tailwind
-
-# Install and configure Auth0 for login/signup
-$ yarn rw setup auth Auth0
-
-# Configure deployment to Netlify
-$ yarn rw setup deploy netlify</code></pre>
+# Run it locally
+$ yarn start
 {% endhighlight %}
 </div>
-</section>
-
-<div class="flex w-36 mx-auto">
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-  <img src="/images/logo.svg" class="mt-24 w-8 mx-auto" />
-</div>
-
-<section class="md:flex mt-24 max-w-screen-lg mx-auto">
-  <div class="md:w-3/5 md:pr-4 mt-4 md:mt-0">
-    
-{% highlight "jsx" %}
-// web/src/components/Comment/Comment.js
-import { Form, Label, TextAreaField, FieldError, Submit } from "@redwoodjs/web"
-
-export const Comment = () => {
-  const onSubmit = (data) => {
-    console.info(`Submitted: ${data}`)
-  }
-  return (
-    <Form onSubmit={onSubmit}>
-        <Label name="comment" errorStyle={{'{{'|escape}} color: "red" }} />
-      <TextAreaField
-        name="comment"
-        errorStyle={{'{{'|escape}} borderColor: "red" }}
-        validation={{'{{'|escape}} required: true }}
-      />
-      <FieldError name="comment" errorStyle={{'{{'|escape}} color: "red" }} />
-      <Submit>Send</Submit>
-    </Form>
-  )
-}
-{% endhighlight %}
-  </div>
-  <div class="md:w-2/5 pl-4 text">
-    <h3 class="text-2xl {{styles.text.alt.four}} font-bold tracking-tight">Forms</h3>
-    <p class="my-2">
-      Working with forms is notoriously annoying in React apps. Redwood removes the complexity and gives you the
-      freedom to work with regular HTML inputs, but sprinkled with a bit of validation and error handling. Show client
-      and server-side errors automatically and style them like any other <span class="whitespace-nowrap">React component.</span>
-    </p>
-  </div>
 </section>

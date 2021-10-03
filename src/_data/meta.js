@@ -3,17 +3,17 @@ module.exports = {
   // NOTE: `process.env.URL` is provided by Netlify, and may need
   // adjusted pending your host
   url: process.env.URL || "http://localhost:8080",
-  siteName: "TskrBase",
+  siteName: "11ty-Docs",
   siteDescription:
     "An opinionated Javascript framework that combines React, GraphQL, Prisma2, SQL, and lots more out of the box.",
   siteImage: "images/opengraph-256.png",
-  siteURL: "https://tskr.io/",
-  twitterHandle: "@redwoodjs",
-  siteTwitterTitle: "Bringing full-stack to the Jamstack",
+  siteURL: "https://11ty-docs.netlify.app/",
+  twitterHandle: "@jacebenson",
+  siteTwitterTitle: "Yay another docs template",
   navLinks: [
     links.docs,
-    links.tutorials,
     links.roadmap,
+    links.tutorials,
   ],
   iconLinks: [
     links.github,
@@ -23,9 +23,10 @@ module.exports = {
   ],
   leftNavLinks: [
     links.docs,
-    links.tutorials,
     links.cookbooks,
     links.videos,
+    links.tutorials,
+
   ],
   footerLinks: [
     links.logos,
