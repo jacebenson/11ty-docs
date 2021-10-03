@@ -252,9 +252,9 @@ export const Comment = () => {
 
 #### Prisma (using JS)
 
-` ```js/17,29-36 `
+` ```js//17,29-36 `
 
-```js/17,29-36
+```js//17,29-36
 // api/db/schema.prisma
 
 datasource DS {

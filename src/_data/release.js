@@ -17,8 +17,8 @@ module.exports = async function() {
       // github public api is limited to 60 calls per hour
       // if a bunch of builds are happening at once, this will fail
       return {
-        name: json[0]?.name || "Unknown",
-        html_url: json[0]?.html_url || "#"
+        name: json[0]?.name || "v0.0",
+        html_url: json[0]?.html_url || links.github.allReleases
       }
     });
   }

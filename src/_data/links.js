@@ -67,7 +67,8 @@ module.exports = {
         stargazersApi:       `https://api.github.com/repos/${thisGitHubRepo}/`,
         releasesApi:         `https://api.github.com/repos/${thisGitHubRepo}/releases?per_page=1`,
         contributorsApi:     `https://api.github.com/repos/${thisGitHubRepo}/contributors`,
-        docsContributorsApi: `https://api.github.com/repos/jacebenson/secondaryRepo/contributors`
+        docsContributorsApi: `https://api.github.com/repos/jacebenson/secondaryRepo/contributors`,
+        allReleases:         `https://github.com/${thisGitHubRepo}/releases/`
     },
     twitter: {
         url: "https://twitter.com/jacebenson",
