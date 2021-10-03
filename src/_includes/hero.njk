@@ -1,3 +1,6 @@
+<style>
+
+</style>
 <div class="hero">
   <div class="lg:flex lg:items-center max-w-screen-xl mx-auto px-8 py-12 md:py-32">
     <div class="hidden lg:block lg:w-1/3 pl-4">
@@ -5,27 +8,22 @@
     </div>
     <div class="w-full lg:w-2/3 lg:pr-4">
       <h2 class="text-3xl md:text-6xl text-center lg:text-left text-white font-semibold tracking-tight leading-10">
-        The <span class="text-red-400">full-stack</span> JS framework
-        for <span class="text-red-400">getting stuff done</span>
+        The <span class="{{styles.text.alt.two}}">best docs</span> starter for <span class="{{styles.text.alt.two}}">11ty</span>
       </h2>
       <p class="max-w-2xl mx-auto lg:mx-0 text-center font-light lg:text-left md:text-lg xl:text-xl mt-6 xl:leading-8 text-white">
-        Spend less time configuring and more time buliding your next web app.
-        Redwood includes React, GraphQL, Prisma, Storybook, Jest, and more
-        pre-configured and ready to go. Scale from one developer doing it
-        all to independent front- and back-end teams working in tandem or separately.
-        However you organize, Redwood works with your workflow.
+        Do you have awesome projects?  Yea?  Do the docs look terrible?  Well, we've got you covered.  Just start here and you'll be on your way to a great new docs site to keep those details in the docs and out of your brain.
       </p>
-      <ul class="flex flex-wrap mt-8 justify-center lg:justify-start lg:-ml-2">
+      <ul class="flex flex-wrap mt-8 justify-center lg:justify-start lg:-ml-2 list-none">
         <li class="px-2 whitespace-no-wrap">
           <a
-            href="https://learn.redwoodjs.com/docs/tutorial/welcome-to-redwood"
-            class="block mt-2 bg-red-700 text-white px-4 py-3 font-semibold rounded hover:bg-red-600 transition duration-200 text-lg"
+            href="{{links.tutorials.url}}"
+            class="block mt-2 {{styles.background.primary.five}} text-white px-4 py-3 font-semibold rounded hover:{{styles.background.primary.four}} transition duration-200 text-lg"
             >Start the Tutorial</a>
         </li>
         <li class="px-4 whitespace-no-wrap">
           <a
-            href="/docs"
-            class="block mt-2 bg-white text-red-700 px-4 py-3 font-semibold rounded hover:bg-red-300 hover:text-red-800 transition duration-200 text-lg"
+            href="{{links.docs.url}}"
+            class="block mt-2 bg-white {{styles.text.alt.four}} px-4 py-3 font-semibold rounded hover:{{styles.background.primary.three}} hover:{{styles.text.alt.five}} transition duration-200 text-lg"
             >Read the Docs</a>
         </li>
       </ul>

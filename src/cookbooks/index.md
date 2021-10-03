@@ -1,5 +1,4 @@
 ---
-title: Cookbooks
 eleventyExcludeFromCollections: true
 ---
-Hello
+Something insightful should go here.
